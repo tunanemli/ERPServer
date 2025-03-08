@@ -7,7 +7,7 @@ namespace ERPServer.Application.Features.Products.CreateProduct
         public CreateProductCommandValidator()
         {
             RuleFor(c => c.Name).NotEmpty();
-            RuleFor(c => c.TypeValue).NotEmpty();
+            RuleFor(c => c.TypeValue).NotEmpty().GreaterThan(0);
         }
     }
 }
