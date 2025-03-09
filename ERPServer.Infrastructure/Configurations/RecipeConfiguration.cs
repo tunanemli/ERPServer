@@ -14,6 +14,9 @@ namespace ERPServer.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Recipe> builder)
         {
             builder.Property(p => p.Name).IsRequired();
+            builder.HasOne(p=>p.Product).WithMany().OnDelete(DeleteBehavior.NoAction);
         }
+
+        
     }
 }
